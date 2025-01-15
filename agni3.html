@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Table Layout</title>
+  <link rel="stylesheet" href="agni3.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Logo</div>
+    <div class="date-time">
+        <span id="date">Date: </span>
+        <span id="time">Time: </span>
+    </div>
+  </div>
+  <div class="up-container"> 
+    <p>Pol</p>
+  </div>
+  <div class="down-container">
+    
+    <p>Data</p>
+
+    <table>
+        <tr> 
+          <td>
+            Purity
+            <br>
+            <p style="font-weight: bold; text-align: right; font-size: 45px;">Data</p>
+          </td>
+          <td>
+            Brix 
+            <br>
+            <p style="font-weight: bold; text-align: right; font-size: 45px; ">Data</p>
+          </td>
+        </tr>
+      </table>
+      
+  </div>
+   <button class="history">History</button>
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const date = now.toLocaleDateString('en-GB'); // Format: DD/MM/YYYY
+      const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      document.getElementById('date').textContent = `Date: ${date}`;
+      document.getElementById('time').textContent = `Time: ${time}`;
+    }
+    setInterval(updateDateTime, 1000); // Update every second
+    updateDateTime(); // Initialize on load
+  </script>
+  
+</body>
+</html>
