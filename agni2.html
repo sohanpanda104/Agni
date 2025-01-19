@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="agni2.css">
-    <script src="agni2.js"></script>
+    <script src="agni2.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -12,7 +12,7 @@
     <nav>
         <ul>
             <div class="left-box">
-            <li><span>Logo</span></li>
+                <li><span>Logo</span></li>
             </div>
             <div class="right-box date-time">
                 <li><span><i class="material-icons">wifi</i></span></li>
@@ -21,34 +21,46 @@
             </div>
         </ul>
     </nav>
-    <table>
-        <tr>
+    <table id="data-table">
+        <tr id="optical-row">
             <td>
-                <div class="top1"><span>Optical Rotation</span></div>
-                <div class="bottom1"><span>0.0936&deg;</span></div>
+                <div class="top1">
+                    <button class="grow-button" onclick="swapRows('optical-row', 'iss-row')">Optical Rotation</button>  
+                </div>
+                <div class="bottom1">
+                    <p id="random-value-1">--</p></div>
             </td>
             <td>
                 <div class="top2">Cell Length</div>
                 <div class="bottom2"><span>100 mm</span></div>
             </td>
         </tr>
-        <tr>
-            <td class="rest-boxes"><span>ISS</span></td>
-            <td class="rest-boxes"><span>Cell temperature</span></td>
+        <tr id="iss-row">
+            <td class="rest-boxes">
+                <button class="grow-button" onclick="swapRows('iss-row', 'optical-row')">ISS</button>
+                <p id="random-value-2">--</p>
+            </td>
+            <td class="rest-boxes"><span>Cell temperature</span>
+                <p id="random-value-3">--</p>
         </tr>
         <tr>
-            <td class="rest-boxes"><span>Specific Rotation</span></td>
-            <td class="rest-boxes">Pol</td>
+            <td class="rest-boxes"><span>Specific Rotation</span>
+                <p id="random-value-4">--</p>
+            <td class="rest-boxes">
+                <!-- Added button for "Pol" -->
+                <button class="button" onclick="openAgni3()">Pol</button>
+            </td>
         </tr>
         <tr>
             <td colspan="2">
                 <div class="click">
-                    <button class="button">History</button>
-                    <button class="button">Set Zero</button>
+                    <button class="button" onclick="openAgni4()">History</button>
+                    <button id="zero">Set Zero</button>
                     <button class="button">Start</button>
                 </div>
             </td>
         </tr>
     </table>
+    
 </body>
 </html>
