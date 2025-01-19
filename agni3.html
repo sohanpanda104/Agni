@@ -37,8 +37,12 @@
       </table>
       
   </div>
-   <button class="history">History</button>
+  <button class="button" onclick="openAgni4()">History</button>
   <script>
+    function openAgni4() {
+    window.location.href = 'agni4.html';
+}
+
     function updateDateTime() {
       const now = new Date();
       const date = now.toLocaleDateString('en-GB'); // Format: DD/MM/YYYY
